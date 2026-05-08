@@ -4,11 +4,13 @@ import Nav from "../components/nav";
 
 function MainLayout(){
     return(
-        <div className="flex gap-3">
+        <div className="flex">
             <Nav/>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
                 <Header/>
-                <Outlet/>
+                <div className="outlet p-5">
+                    <Outlet/>
+                </div>
             </div>
             
         </div>
