@@ -1,0 +1,47 @@
+
+@import "tailwindcss";
+
+
+
+/* blue-dark-0: #0b0f1c
+blue-dark-1: #131725
+greadien-1: blue & violet || #2196F3 & #9C27B0
+text-gray: #9e9db2
+text-white: #ebebf0 */
+
+:root {
+  font-family: font2;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #ffffffde;
+  --orange-1:#ffd700;
+}
+
+
+
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+
+
+@font-face {
+  font-family: font1;
+  src: url(./fonts/ElMessiri-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: font2;
+  src: url(./fonts/NationalPark-VariableFont_wght.ttf);
+}
+
+
+
+
+body{
+  background-color: #0b0f1c;
+
+}
+
