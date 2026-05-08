@@ -41,7 +41,42 @@ text-white: #ebebf0 */
 
 
 body{
+  background-color: #0b0f1c4b;
   background-color: #0b0f1c;
 
 }
 
+
+
+.link-normal{
+  @apply flex items-center gap-4  p-2 px-4 border border-transparent rounded-xl text-[#b3b2c0] transition-all duration-150
+}
+.link-active{
+  @apply border-[#6229e7c2] shadow-[inset_-1px_0_30px_7px_#6229e781] 
+}
+
+.box{
+  @apply bg-gray-900/70 p-4 py-5 border border-gray-800/80 rounded-xl flex  bg-linear-to-b from-gray-700/5 to-gray-950/40
+}
+
+.link-active p{
+  color: #dfdbdb;
+}
+.link-active i{
+  color: #ff393986;
+  color: #9b31ff;
+}
+
+.notefications .count{
+  width: 20px;
+  height: 15px;
+  border-radius: 50px;
+  position: absolute;
+  top: -5px;
+  right: -5px ;
+  background: linear-gradient(to top,#9b31ff , #6f31ff);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
