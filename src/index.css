@@ -41,7 +41,7 @@ text-white: #ebebf0 */
 
 
 body{
-  background-color: #0b0f1c4b;
+  background-color: #6229e715;
   background-color: #0b0f1c;
 
 }
@@ -49,7 +49,7 @@ body{
 
 
 .link-normal{
-  @apply flex items-center gap-4  p-2 px-4 border border-transparent rounded-xl text-[#b3b2c0] transition-all duration-150
+  @apply flex items-center gap-4  p-2 px-4 border border-transparent rounded-xl text-[#b3b2c0] transition-all duration-150 hover:shadow-[inset_-1px_0_30px_7px_#6229e715] 
 }
 .link-active{
   @apply border-[#6229e7c2] shadow-[inset_-1px_0_30px_7px_#6229e781] 
@@ -79,4 +79,12 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button{
+  transition: .2s;
+}
+button:hover{
+  /* opacity: 0.9; */
+  transform: scale(1.015);
 }
