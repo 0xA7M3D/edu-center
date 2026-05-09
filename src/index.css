@@ -183,3 +183,32 @@ button:hover{
 }
 
 
+.input-chekBox{
+  appearance: none;
+  position: relative;
+  border: 1px solid #b4a9cc2c;
+  width: 70px;
+  height: 30px;
+  border-radius: 50px;
+}
+
+.input-chekBox::after{
+  content: '';
+  position: absolute;
+  top:-1px;
+  left:0;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to left , #2a018b , #524500);
+  border-radius: 50%;
+  transition: .2s;
+  transform: scale(1.2);
+}
+
+.input-chekBox:checked::after{
+  left: 40px;
+  background: linear-gradient(to left , #6f31ff , #ffd700);
+}
+.input-chekBox:checked{
+  background: linear-gradient(to left , #6f31ff50 , #ffd90044);
+}

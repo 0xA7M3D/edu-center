@@ -16,7 +16,7 @@ function Header(){
             </div>
 
             <div className="r flex gap-3 items-center">
-                <div className="date flex gap-3 items-center">
+                <div className="date max-[800px]:hidden flex gap-3 items-center">
                     <i className="fa fa-calendar-day text-gray-600"></i>
                    <p className="text-gray-300"> 8 May 2026</p>
                 </div>
@@ -29,7 +29,7 @@ function Header(){
                 <div className="info">
                     <div className="profile-small flex gap-3 items-center">
                         <img className="w-13 h-13 rounded-full" src={img} alt="" />
-                        <div className="text-info-small">
+                        <div className="text-info-small  max-[800px]:hidden">
                             <p className="text-lg">Ahmed Elhady</p>
                             <p className="text-sm text-gray-600">Admin</p>
                         </div>
