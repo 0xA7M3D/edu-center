@@ -110,6 +110,48 @@ body{
   @apply hidden
 }
 
+.pa{
+  @apply text-sm text-gray-500
+}
+.h2a{
+  @apply text-2xl pb-1
+}
+
+.inp-s{
+  @apply border border-gray-800 rounded-lg 
+}
+
+.th-s{
+  @apply text-start border-b border-gray-800/80 p-1 py-2 pl-4 text-gray-700
+}
+.td-s{
+  @apply text-start border-b border-gray-800/50 p-4 text-sm py-3 text-gray-300
+}
+
+select {
+  color-scheme: dark;
+}
+
+select {
+  @apply border-none px-5
+  /* background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 5px;
+  border-radius: 4px; */
+}
+
+
+option {
+  background-color: #101828 ;
+  color: #cecece;
+}
+
+.hr-y{
+  border: none;
+  width: 1px;
+}
+
 .link-active p{
   color: #dfdbdb;
 }
