@@ -13,19 +13,19 @@ function Data(){
             </div>
 
             <div className="boxes flex flex-wrap gap-4 items-start justify-center">
-                <div className="box w-max mt-4">
+                <div className="box max-[770px]:w-full max-[770px]:justify-center  w-max mt-4">
                     <PieChartWithPaddingAngle/>
                 </div>  
-                <div className="box w-max mt-4">
+                <div className="box max-[770px]:w-full max-[770px]:justify-center  w-max mt-4">
                     <SimpleBarChart/>
                 </div>  
-                <div className="box w-max mt-4">
+                <div className="box max-[770px]:w-full max-[770px]:justify-center  w-max mt-4">
                     <PieChartWithCustomizedLabel/>
                 </div>  
-                <div className="box w-max mt-4">
+                <div className="box max-[770px]:w-full max-[770px]:justify-center  w-max mt-4">
                     <Chart_4 />
                 </div>  
-                <div className="box w-max mt-4">
+                <div className="box max-[770px]:w-full max-[770px]:justify-center  w-max mt-4">
                     <LineChartC6 />
                 </div>  
             </div>
