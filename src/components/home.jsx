@@ -11,8 +11,8 @@ function Home(){
             <div className="hero_and_boxes">
 
                 <div className="hero ">
-                    <h1 className="text-2xl pb-1">Welcom back Ahmed 👋</h1>
-                    <p className="text-sm text-gray-500">Here's what's happening at your education center today.</p>
+                    <h1 className="h2a">Welcom back Ahmed 👋</h1>
+                    <p className="pa">Here's what's happening at your education center today.</p>
                 </div>
 
                 <div className="boxes p-3 py-6 flex gap-5 flex-wrap justify-center">
