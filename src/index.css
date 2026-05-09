@@ -22,7 +22,6 @@ text-white: #ebebf0 */
 
 *{
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 
@@ -49,14 +48,66 @@ body{
 
 
 .link-normal{
-  @apply flex items-center gap-4  p-2 px-4 border border-transparent rounded-xl text-[#b3b2c0] transition-all duration-150 hover:shadow-[inset_-1px_0_30px_7px_#6229e715] 
+  @apply flex items-center gap-4 whitespace-nowrap p-2 px-4 border border-transparent rounded-xl text-[#b3b2c0] transition-all duration-150 hover:shadow-[inset_-1px_0_30px_7px_#6229e715] 
 }
 .link-active{
   @apply border-[#6229e7c2] shadow-[inset_-1px_0_30px_7px_#6229e781] 
 }
+.center-x-y{
+  @apply flex items-center justify-center
+}
 
 .box{
   @apply bg-gray-900/70 p-4 py-5 border border-gray-800/80 rounded-xl flex  bg-linear-to-b from-gray-700/5 to-gray-950/40
+}
+
+
+.nav.none-active{
+  @apply w-20
+}
+.nav i{
+  @apply duration-300
+}
+.nav.none-active i{
+  @apply text-lg
+}
+.nav p{
+  opacity: 1;
+  transition: .2s;
+  
+}
+.nav .upgrade-dev{
+  transition: .2s;
+  opacity: 1;
+}
+.nav .btn-upgrade-only{
+  transition: .2s;
+  opacity: 1;
+  @apply visible
+}
+.nav.none-active p{
+  opacity: 0;
+  @apply collapse
+}
+.nav.none-active .logo-big{
+  opacity: 0;
+  @apply hidden
+}
+.nav.none-active .upgrade-dev{
+  opacity: 0;
+  @apply hidden
+}
+.nav.active-nav .btn-upgrade-only{
+  opacity: 0;
+  @apply collapse
+}
+.nav.active-nav .btn-upgrade-only{ 
+  opacity: 0;
+  @apply collapse
+}
+.nav.active-nav .logo-small{ 
+  opacity: 0;
+  @apply hidden
 }
 
 .link-active p{
@@ -88,3 +139,5 @@ button:hover{
   /* opacity: 0.9; */
   transform: scale(1.015);
 }
+
+
