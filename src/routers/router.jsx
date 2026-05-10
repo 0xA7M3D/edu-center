@@ -7,6 +7,8 @@ import AddStudent from "../components/addStudent";
 import Students from "../components/students";
 import Data from "../components/data";
 import Settings from "../components/settings";
+import LastOperation from "../components/last-operation";
+import AddGroup from "../components/addGroup";
 
 
 
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
             {
                 path:'/settings',
                 element:<Settings/>  
+            },
+            {
+                path:'/last-operations',
+                element:<LastOperation/>  
+            },
+            {
+                path:'/add-group',
+                element:<AddGroup/>  
             },
         ]
     }

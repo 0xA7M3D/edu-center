@@ -38,7 +38,7 @@ function Home(){
                             </div>
                         </div>
                         <div className="chart self-start pt-3">
-                            <p className="text-gray-600 text-start">Total attendance today</p>
+                            <p className="text-gray-600 text-start">Total attendance today </p>
                         </div>
                     </div>
                     <div className="box flex-col w-60">
@@ -50,7 +50,7 @@ function Home(){
                             </div>
                         </div>
                         <div className="chart self-start pt-3">
-                            <p className="text-gray-600 text-start">Total money from students</p>
+                            <p className="text-gray-600 text-start">Total money from students this month</p>
                         </div>
                     </div>
                     <div className="box flex-col w-60">

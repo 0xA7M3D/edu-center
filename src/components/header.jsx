@@ -6,7 +6,7 @@ function Header(){
             
             
             
-            <div className="inp ml-11 w-[420px] flex items-center gap-2 border border-gray-700/70 bg-gray-600/10 rounded-lg pr-3">
+            <div className="inp  outline-gray-600 ml-11 w-[420px] flex items-center gap-2 border border-gray-700/70 bg-gray-600/10 rounded-lg pr-3">
                 <i className="far fa-search text-lg pl-4 text-gray-600"></i>
                 <input className="p-3 text-sm outline-none w-full" type="text" placeholder="Search students,numbers" />
                 <div className="short-cut flex gap-2 text-xs text-gray-400 bg-blue-950/40 w-min p-1 px-2.5 rounded-lg items-center ">
