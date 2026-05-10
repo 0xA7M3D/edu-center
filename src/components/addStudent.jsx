@@ -33,10 +33,14 @@ function AddStudent(){
 
                     <div className="inputs-2 flex gap-7 w-full">
                         <label className="flex flex-col gap-1 w-full" htmlFor="">
-                            <p className="text-gray-300">Birthday</p>
+                            <p className="text-gray-300">Level</p>
                             <div className="inp flex items-center inp-s w-full">
                                 <i className="fa fa-birthday-cake  px-2 pl-4 text-gray-700"></i>
-                                <input className="w-full p-3 outline-none" type="date" placeholder="birth date"/>
+                                <select className="w-full p-3 outline-none" name="" id="">
+                                    <option value="first">First </option>
+                                    <option value="second">Second</option>
+                                    <option value="threed">Threed</option>
+                                </select>
                             </div>
                         </label>
                         <label className="flex flex-col gap-1 w-full" htmlFor="">

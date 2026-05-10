@@ -39,6 +39,10 @@ function Nav(){
                     <i className="fal fa-money-bill-wave"></i>
                     <p>Payment</p>
                 </Link>
+                <Link to='/add-group' className={`link link-normal ${location.pathname == "/add-group"? "link-active":"" }`}>
+                    <i className="fal fal fa-users-cog"></i>
+                    <p>Add Group</p>
+                </Link>
                 <Link to='/add-student' className={`link link-normal ${location.pathname == "/add-student"? "link-active":"" }`}>
                     <i className="fal fa-user-plus"></i>
                     <p>Add Student</p>
@@ -50,6 +54,10 @@ function Nav(){
                 <Link to='/data' className={`link link-normal ${location.pathname == "/data"? "link-active":"" }`}>
                     <i className="fal fa-chart-pie"></i>
                     <p>Data</p>
+                </Link>
+                <Link to='/last-operations' className={`link link-normal ${location.pathname == "/last-operations"? "link-active":"" }`}>
+                    <i className="fal fa-clock"></i>
+                    <p>last operations</p>
                 </Link>
                 <Link to='/settings' className={`link link-normal ${location.pathname == "/settings"? "link-active":"" }`}>
                     <i className="fal fa-cog"></i>
