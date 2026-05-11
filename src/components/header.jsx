@@ -22,10 +22,10 @@ function Header(){
                 </div>
 
                 <hr className="w-px h-7 mx-2 border-none bg-gray-700"/>
-                    <div className="notefications relative text-xl px-2 ">
+                    {/* <div className="notefications relative text-xl px-2 ">
                         <i className="fa fa-bell text-gray-200"></i>
                         <p className="count">0</p>
-                    </div>
+                    </div> */}
                 <div className="info">
                     <div className="profile-small flex gap-3 items-center">
                         <img className="w-13 h-13 rounded-full" src={img} alt="" />

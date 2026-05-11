@@ -145,6 +145,66 @@ body{
   @apply p-2 px-3 bg-linear-to-b from-blue-600 to-blue-800 rounded-lg
 }
 
+.info-student{
+  transform: translate(-50px,0);
+  opacity: 0;
+  transition: .7s;
+}
+.info-student.active{
+  transform: translate(0px,0);
+  opacity: 1;
+}
+
+.back-popup{
+  visibility: collapse;
+  opacity: 0;
+  transition: .3s;
+}
+.popup{
+  visibility: collapse;
+  transform: scale(.5);
+  opacity: 0;
+  transition: .3s;
+}
+
+.back-popup.active{
+  visibility: visible;
+  opacity: 1;
+}
+.popup.active{
+  visibility: visible;
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.info-student .svg{
+  transform: scale(6);
+  opacity: 0;
+
+}
+.info-student.active .svg{
+  opacity: 0;
+  animation: animat_svg .8s forwards;
+  animation-delay: .3s;
+}
+
+@keyframes animat_svg {
+  0%{
+    transform: scale(6);
+    opacity: 0;
+  }
+  50%{
+    transform: scale(.5);
+    opacity: .8;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+
+}
+
 select {
   color-scheme: dark;
 }

@@ -1,7 +1,41 @@
 import SvgIcon from "./svg-scan";
 import img from '../assets/images/image.png'
+import { useState } from "react";
 
 function Attends(){
+
+    const [done , setDone] = useState(false);
+
+
+    const [data,setData] =
+    useState({
+        id:1,
+    })
+
+    function submit() {
+
+        fetch("http://localhost:3000/attendanse",{
+            method:"post",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+            
+        })
+        .then(res => res.json())
+        .then(da => {
+            console.log(da)
+            setDone(true)
+        })
+        .catch(error => {
+            console.log("Error Attends: ",error)
+            setDone(false)
+        })
+        
+    }
+
+
+
     return(
         <div className="attendance">
                 <div className="hero-here">
@@ -13,16 +47,16 @@ function Attends(){
                         <div className="img w-70">
                             <SvgIcon />
                         </div>
-                        <input className="border border-gray-800/70 rounded-lg text-xl p-1 px-3 text-center" type="text" />
-                        <button className="bg-linear-to-r h-max text-lg from-blue-600 to-violet-600 p-2 cursor-pointer rounded-lg mt-2">
+                        <input onChange={(e)=>{setData({...data,id:e.target.value})}} value={data.id} className="border border-gray-800/70 rounded-lg text-xl p-1 px-3 text-center" type="text" />
+                        <button onClick={submit} className="bg-linear-to-r h-max text-lg from-blue-600 to-violet-600 p-2 cursor-pointer rounded-lg mt-2">
                             <i className="fas fa-qrcode pr-2"></i>
                             Start Scanner
                         </button>
                     </div>
                     <hr className="hr-y h-30 bg-gray-800 mx-10" />
                     
-                    {/* <h1 className="text-2xl text-gray-700 text-center max-w-100">Scan First For sign attendance and show info student</h1> */}
-                    <div className="info-student flex flex-col items-center">
+                    <h1 className={`text-2xl ${!done ? "active":"hidden"} text-gray-700 text-center max-w-100`}>Scan First For sign attendance and show info student</h1>
+                    <div className={`info-student ${done ? "active":""}  flex flex-col items-center`}>
                         <div className="img-prof">
                             <img className="w-20 h-20 rounded-full mb-4" src={img} alt="" />
                         </div>
