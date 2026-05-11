@@ -6,7 +6,7 @@ function Nav(){
 
     const location = useLocation(null);
     const [active,setActive] = useState(false);
-    console.log(active);
+    // console.log(active);
     
 
     
