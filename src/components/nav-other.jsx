@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SvgIcon from "./svg-scan";
 function NavOther() {
     return(
-        <div className="nav_other w-87 flex-none ">
+        <div className="nav_other  w-87 flex-none ">
             <div className="boxes-sticky sticky top-0  flex flex-col gap-5">
                 <div className="box flex-col ">
                     <h1 className="text-xl">QR-Code Check in</h1>

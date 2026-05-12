@@ -6,7 +6,7 @@ import LineChartC6 from "./charts/chart-6";
 
 function Data(){
     return(
-        <div className="data-charts ">
+        <div className="data-charts content-page">
             <div className="hero-stu">
                 <h2 className="h2a">Data charts</h2>
                 <p className="pa">All data you well found here</p>

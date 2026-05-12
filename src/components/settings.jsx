@@ -1,6 +1,6 @@
 function Settings(){
     return(
-        <div className="settings">
+        <div className="settings content-page">
             <div className="hero-stu">
                 <h2 className="h2a">All Settings</h2>
                 <p className="pa">you can edite some settings </p>

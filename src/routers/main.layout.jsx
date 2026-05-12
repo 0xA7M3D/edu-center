@@ -8,7 +8,7 @@ function MainLayout(){
             <Nav/>
             <div className="flex flex-col w-full">
                 <Header/>
-                <div className="outlet p-5">
+                <div className="outlet p-7">
                     <Outlet/>
                 </div>
             </div>
