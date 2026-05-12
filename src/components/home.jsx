@@ -7,7 +7,7 @@ import NavOther from "./nav-other";
 import SvgIcon from "./svg-scan";
 function Home(){
     return(
-        <div className="home flex gap-4">
+        <div className="home content-page flex gap-4">
             <div className="hero_and_boxes">
 
                 <div className="hero ">

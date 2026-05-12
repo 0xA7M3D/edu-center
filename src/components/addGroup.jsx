@@ -18,7 +18,7 @@ function AddGroup(){
 
     function submit() {
 
-        fetch("http://localhost:3000/addGroup1",{
+        fetch("http://localhost:3000/addGroup",{
             method:"post",
             headers:{
                 "Content-Type": "application/json"
@@ -43,8 +43,8 @@ function AddGroup(){
 
 
     return(
-        <div className="add-group">            
-        <div className={`back-popup ${popupSu||popupWr ? 'active':''} w-full h-full absolute top-0 left-0 bg-gray-900/50 backdrop-blur-xs`}></div>
+        <div className="add-group content-page">            
+            <div onClick={()=>{openPopupSu(false); openPopupWr(false)}} className={`back-popup ${popupSu||popupWr ? 'active':''} z-30 fixed w-full h-full top-0 left-0 bg-gray-900/50 backdrop-blur-xs`}></div>
             
             <div className={`box popup ${popupSu ? 'active':''} absolute z-40 -translate-1/2 top-1/2 left-1/2 !bg-gray-900 popup-add-student w-100 gap-5 flex flex-col items-center`}>
                 <div className="icon-status h-17 -translate-y-22">

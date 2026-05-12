@@ -37,7 +37,7 @@ function Payment(){
 
 
     return(
-        <div className="payment">
+        <div className="payment content-page">
                 <div className="hero-here">
                     <h1 className="h2a">Payment this month</h1>
                     <p className="pa">git money fro this month from student</p>

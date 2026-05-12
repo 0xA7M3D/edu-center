@@ -37,7 +37,7 @@ function Attends(){
 
 
     return(
-        <div className="attendance">
+        <div className="attendance content-page">
                 <div className="hero-here">
                     <h1 className="h2a">Sign Attendance</h1>
                     <p className="pa">Attendance students</p>
