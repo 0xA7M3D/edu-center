@@ -3,8 +3,36 @@ import delete_png from "../assets/images/delete.png";
 
 function LastOperation(){
 
-    const [idUser , setIdUser] = useState()
+    const [notifcat_succ,setNotifcat_succ] = useState(false);
+    const [notifcat_wrong,setNotifcat_wrong] = useState(false);
+
+    const [idOper , setIdOper] = useState()
     const [popupDel,openPopupDel] = useState(false);
+
+
+    function deleteOperation() {
+
+        fetch("http://localhost:3000/deleteOperation",{
+            method:"post",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({id:idOper})
+            
+        })
+        .then(res => res.json())
+        .then(da => {
+            console.log(da)
+            setNotifcat_succ(true);
+            setNotifcat_wrong(false);
+        })
+        .catch(error =>{
+            console.log("Error delete User: " , error);
+            setNotifcat_wrong(true);
+            setNotifcat_succ(false);
+      
+        })
+    }
 
     const [operations , setOperations] = useState([
            
@@ -47,13 +75,28 @@ function LastOperation(){
                     <h2 className="text-3xl text-gray-200 text-center">Are You sure about deleteing! </h2>
                     <p className="text-md text-gray-600 text-center">This student will be permanently removed</p>
                 </div>
-                <button onClick={()=>{openPopupDel(false)}} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
+                <button onClick={()=>{openPopupDel(false);deleteOperation()}} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
             </div>
 
 
             <div className="hero-stu">
                 <h2 className="h2a">All last operation</h2>
                 <p className="pa">Last operation happenend</p>
+            </div>
+            
+            <div className={`notifcat ${notifcat_succ?"active":''} ntifcat-succ border border-green-600/30 w-full rounded-lg p-5 py-3 translate-y-3 bg-green-400/15 flex justify-between items-center`}>
+                <div className="t flex gap-3 items-center">
+                    <i className="fa fa-check-circle text-2xl text-green-800"></i>
+                    <h3 className="text-green-500"> Everything is fine </h3>
+                </div>
+                <i onClick={()=>{setNotifcat_succ(false)}} className="fas fa-close p-2 px-3 text-sm rounded-full bg-amber-50/10 cursor-pointer hover:bg-amber-50/20"></i>
+            </div>
+            <div className={`notifcat ${notifcat_wrong?"active":''} ntifcat-succ border border-red-400/30 w-full rounded-lg p-5 py-3 translate-y-3 bg-red-400/15 flex justify-between items-center`}>
+                <div className="t flex gap-3 items-center">
+                    <i className="fa fa-bug text-2xl text-red-800"></i>
+                    <h3 className="text-red-500">There some Error</h3>
+                </div>
+                <i onClick={ ()=>{setNotifcat_wrong(false)}} className="fas fa-close p-2 px-3 text-sm rounded-full bg-amber-50/10 cursor-pointer hover:bg-amber-50/20"></i>
             </div>
 
             <div className="box mt-4 flex flex-col gap-5">
@@ -111,7 +154,7 @@ function LastOperation(){
                                         <div className="actions flex gap-2 ">
                                             <button 
                                                 onClick={()=>{
-                                                    setIdUser(op.id)
+                                                    setIdOper(op.id)
                                                     openPopupDel(true)
                                                 }}
                                                 

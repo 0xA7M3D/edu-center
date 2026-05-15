@@ -149,10 +149,12 @@ body{
   transform: translate(-50px,0);
   opacity: 0;
   transition: .7s;
+  visibility: collapse ;
 }
 .info-student.active{
   transform: translate(0px,0);
   opacity: 1;
+  visibility: visible ;
 }
 
 .back-popup{
@@ -178,13 +180,13 @@ body{
   opacity: 1;
 }
 
-
+/* 
 .info-student .svg{
-  transform: scale(6);
   opacity: 0;
-
-}
+  
+} */
 .info-student.active .svg{
+  transform: scale(6);
   opacity: 0;
   animation: animat_svg .8s forwards;
   animation-delay: .3s;
@@ -309,10 +311,19 @@ button:hover{
 }
 
 .nav .over::-webkit-scrollbar{
-  width: 0px;
+  width: 2px;
   left: 100px;
-
+  transition: .2s ease;
 }
+.nav .over::-webkit-scrollbar-thumb{
+  background-color: #d6c5ff38;
+  border-radius: 10px;
+  
+}
+.nav .over:hover::-webkit-scrollbar-thumb{
+  background-color: #d6c5ff57;
+}
+
 
 
 .notifcat{
@@ -331,4 +342,15 @@ button:hover{
   transform: translate(0,0);
   opacity: 1;
   @apply  p-5 py-3 ;
+}
+
+
+.no-found{
+  max-width: 0;
+  transition: .3s;
+  opacity: 0;
+}
+.no-found.active{
+  max-width: 400px;
+  opacity: 1;
 }

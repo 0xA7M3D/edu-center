@@ -14,6 +14,7 @@ function AddStudent(){
         name:'',
         stuId:'',
         level:'first',
+        locationGroup:'group hisamiah',
         gender:'male',
         num:'',
         location:''
@@ -111,6 +112,17 @@ function AddStudent(){
                                     <option value="first">First </option>
                                     <option value="second">Second</option>
                                     <option value="threed">Threed</option>
+                                </select>
+                            </div>
+                        </label>
+                        <label className="flex flex-col gap-1 w-full" htmlFor="">
+                            <p className="text-gray-300">location group</p>
+                            <div className="inp flex items-center inp-s w-full">
+                                <i className="fa fa-location  px-2 pl-4 text-gray-700"></i>
+                                <select onChange={(e)=>{setData({...data,locationGroup:e.target.value})}} value={data.locationGroup} className="w-full p-3 outline-none" name="" id="">
+                                    <option value="group hisamiah">group hismiah</option>
+                                    <option value="group faqus">group faqus</option>
+                                    <option value="group roudah">group roudah</option>
                                 </select>
                             </div>
                         </label>
