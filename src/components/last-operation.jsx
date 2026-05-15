@@ -1,5 +1,5 @@
 import { useState } from "react";
-import delete_png from "../assets/images/delete.png";
+import delete_png from "../assets/images/trash.png";
 
 function LastOperation(){
 
@@ -75,7 +75,7 @@ function LastOperation(){
                     <h2 className="text-3xl text-gray-200 text-center">Are You sure about deleteing! </h2>
                     <p className="text-md text-gray-600 text-center">This student will be permanently removed</p>
                 </div>
-                <button onClick={()=>{openPopupDel(false);deleteOperation()}} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
+                <button onClick={()=>{openPopupDel(false);deleteOperation()}} className="p-2 px-4 w-full bg-linear-to-r from-pink-800 to-pink-950 cursor-pointer rounded-lg h-max">  Remove </button>
             </div>
 
 
