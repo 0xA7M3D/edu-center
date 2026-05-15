@@ -149,12 +149,18 @@ body{
   transform: translate(-50px,0);
   opacity: 0;
   transition: .7s;
+<<<<<<< HEAD
   visibility: collapse ;
+=======
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
 }
 .info-student.active{
   transform: translate(0px,0);
   opacity: 1;
+<<<<<<< HEAD
   visibility: visible ;
+=======
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
 }
 
 .back-popup{
@@ -180,6 +186,7 @@ body{
   opacity: 1;
 }
 
+<<<<<<< HEAD
 /* 
 .info-student .svg{
   opacity: 0;
@@ -188,6 +195,16 @@ body{
 .info-student.active .svg{
   transform: scale(6);
   opacity: 0;
+=======
+
+.info-student .svg{
+  transform: scale(6);
+  opacity: 0;
+
+}
+.info-student.active .svg{
+  opacity: 0;
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
   animation: animat_svg .8s forwards;
   animation-delay: .3s;
 }
@@ -311,6 +328,7 @@ button:hover{
 }
 
 .nav .over::-webkit-scrollbar{
+<<<<<<< HEAD
   width: 2px;
   left: 100px;
   transition: .2s ease;
@@ -324,6 +342,12 @@ button:hover{
   background-color: #d6c5ff57;
 }
 
+=======
+  width: 0px;
+  left: 100px;
+
+}
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
 
 
 .notifcat{
@@ -343,6 +367,7 @@ button:hover{
   opacity: 1;
   @apply  p-5 py-3 ;
 }
+<<<<<<< HEAD
 
 
 .no-found{
@@ -354,3 +379,5 @@ button:hover{
   max-width: 400px;
   opacity: 1;
 }
+=======
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135

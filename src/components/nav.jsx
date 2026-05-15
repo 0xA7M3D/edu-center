@@ -11,11 +11,16 @@ function Nav(){
 
     
     return(
+<<<<<<< HEAD
         <div className={`nav ${active?"active-nav":"none-active"} z-20 bg-[#0b0f1c] sticky top-0 duration-300  flex-none h-[100vh]   flex w-[270px] flex-col gap-5 py-2 border-r border-gray-800`}>
+=======
+        <div className={`nav ${active?"active-nav":"none-active"} z-20 bg-[#0b0f1c] sticky top-0 duration-300  flex-none p-3 h-[100vh]   flex w-[270px] flex-col gap-5 py-2 border-r border-gray-800`}>
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
             
             <div onClick={()=>{setActive(!active)}} className="btn-bar bg-gray-900 cursor-pointer absolute top-4.5 -right-[43px] rounded-l-none center-x-y border-l-0 border border-gray-800 p-2 px-3 rounded-lg">
                 <i className="fa fa-bars text-xl"></i>
             </div>
+<<<<<<< HEAD
             <div className="over p-3 flex flex-col gap-2 overflow-y-auto overflow-x-hidden">
             
                 <div className="logo-big p-3 px-4">
@@ -26,6 +31,18 @@ function Nav(){
                     {/* <img className="w-50" src={logo} alt="" /> */}
                     <h2 className="text-blue-600 text-3xl">L</h2>
                 </div>
+=======
+            
+            <div className="logo-big p-3 px-4">
+                {/* <img className="w-50" src={logo} alt="" /> */}
+                <p className="text-blue-600 text-3xl">Logo</p>
+            </div>
+            <div className="logo-small p-3 px-4">
+                {/* <img className="w-50" src={logo} alt="" /> */}
+                <h2 className="text-blue-600 text-3xl">L</h2>
+            </div>
+            <div className="over flex flex-col gap-2 overflow-y-auto overflow-x-hidden">
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
                 <div className="links flex flex-col gap-1">
                     <Link to='/' className={`link link-normal ${location.pathname == "/"? "link-active":"" } `}>
                         <i className="fal fa-home "></i>
@@ -79,7 +96,11 @@ function Nav(){
                     <i className="fas fa-shapes"></i>
                 </button>
             </div>
+<<<<<<< HEAD
     </div>
+=======
+        </div>
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
     )
 }
 

@@ -3,6 +3,7 @@ import delete_png from "../assets/images/delete.png";
 
 function LastOperation(){
 
+<<<<<<< HEAD
     const [notifcat_succ,setNotifcat_succ] = useState(false);
     const [notifcat_wrong,setNotifcat_wrong] = useState(false);
 
@@ -34,6 +35,11 @@ function LastOperation(){
         })
     }
 
+=======
+    const [idUser , setIdUser] = useState()
+    const [popupDel,openPopupDel] = useState(false);
+
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
     const [operations , setOperations] = useState([
            
         {
@@ -75,7 +81,11 @@ function LastOperation(){
                     <h2 className="text-3xl text-gray-200 text-center">Are You sure about deleteing! </h2>
                     <p className="text-md text-gray-600 text-center">This student will be permanently removed</p>
                 </div>
+<<<<<<< HEAD
                 <button onClick={()=>{openPopupDel(false);deleteOperation()}} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
+=======
+                <button onClick={()=>{openPopupDel(false)}} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
             </div>
 
 
@@ -83,6 +93,7 @@ function LastOperation(){
                 <h2 className="h2a">All last operation</h2>
                 <p className="pa">Last operation happenend</p>
             </div>
+<<<<<<< HEAD
             
             <div className={`notifcat ${notifcat_succ?"active":''} ntifcat-succ border border-green-600/30 w-full rounded-lg p-5 py-3 translate-y-3 bg-green-400/15 flex justify-between items-center`}>
                 <div className="t flex gap-3 items-center">
@@ -98,6 +109,8 @@ function LastOperation(){
                 </div>
                 <i onClick={ ()=>{setNotifcat_wrong(false)}} className="fas fa-close p-2 px-3 text-sm rounded-full bg-amber-50/10 cursor-pointer hover:bg-amber-50/20"></i>
             </div>
+=======
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
 
             <div className="box mt-4 flex flex-col gap-5">
                 <div className="header-box flex justify-between w-full">
@@ -154,7 +167,11 @@ function LastOperation(){
                                         <div className="actions flex gap-2 ">
                                             <button 
                                                 onClick={()=>{
+<<<<<<< HEAD
                                                     setIdOper(op.id)
+=======
+                                                    setIdUser(op.id)
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
                                                     openPopupDel(true)
                                                 }}
                                                 

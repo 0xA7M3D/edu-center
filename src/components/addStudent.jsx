@@ -14,7 +14,10 @@ function AddStudent(){
         name:'',
         stuId:'',
         level:'first',
+<<<<<<< HEAD
         locationGroup:'group hisamiah',
+=======
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
         gender:'male',
         num:'',
         location:''
@@ -116,6 +119,7 @@ function AddStudent(){
                             </div>
                         </label>
                         <label className="flex flex-col gap-1 w-full" htmlFor="">
+<<<<<<< HEAD
                             <p className="text-gray-300">location group</p>
                             <div className="inp flex items-center inp-s w-full">
                                 <i className="fa fa-location  px-2 pl-4 text-gray-700"></i>
@@ -127,6 +131,8 @@ function AddStudent(){
                             </div>
                         </label>
                         <label className="flex flex-col gap-1 w-full" htmlFor="">
+=======
+>>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
                             <p className="text-gray-300">Gender</p>
                             <div className="inp flex items-center inp-s w-full">
                                 <i className="fa fa-mars  px-2 pl-4 text-gray-700"></i>
