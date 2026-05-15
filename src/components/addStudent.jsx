@@ -6,7 +6,9 @@ function AddStudent(){
     
     const [popupSu,openPopupSu] = useState(false);
     const [popupWr,openPopupWr] = useState(false);
-    
+
+
+
     let idS = 0;
     const [data,setData] =
     useState({
@@ -14,10 +16,7 @@ function AddStudent(){
         name:'',
         stuId:'',
         level:'first',
-<<<<<<< HEAD
         locationGroup:'group hisamiah',
-=======
->>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
         gender:'male',
         num:'',
         location:''
@@ -42,8 +41,7 @@ function AddStudent(){
         .catch(error =>{
             console.log("Error Add User: " , error);
             openPopupWr(true);
-            openPopupSu(false);
-            
+            openPopupSu(false);    
         })
     }
 
@@ -81,94 +79,91 @@ function AddStudent(){
                 <p className="pa">Add new student</p>
             </div>
 
-              <div className="box mt-4  flex flex-col gap-5">
-                <div className="hero-stu flex justify-between items-center">
-                    <h2 className="h2a text-gray-400">Personal information</h2>
-                    <i className="fa fa-user-plus text-gray-700 text-2xl px-2"></i>
-                </div>
+            <div className="box mt-4  flex flex-col gap-5">
+            <div className="hero-stu flex justify-between items-center">
+                <h2 className="h2a text-gray-400">Personal information</h2>
+                <i className="fa fa-user-plus text-gray-700 text-2xl px-2"></i>
+            </div>
 
-                <div className="inputs flex flex-col gap-4">
-                    <div className="inputs-2 flex gap-7 w-full">
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-                            <p className="text-gray-300">Enter Name</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fa fa-user  px-2 pl-4 text-gray-700"></i>
-                                <input onChange={(e)=>{setData({...data,name:e.target.value})}} value={data.name} className="w-full p-3 outline-none" type="text" placeholder="Name student"/>
-                            </div>
-                        </label>
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-                            <p className="text-gray-300">Student id</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fa fa-barcode-read  px-2 pl-4 text-gray-700"></i>
-                                <input onChange={(e)=>{setData({...data,stuId:e.target.value})}} value={data.stuId} className="w-full p-3 outline-none" type="text" placeholder="Code student"/>
-                            </div>
-                        </label>
-
-                    </div>
-
-                    <div className="inputs-2 flex gap-7 w-full">
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-                            <p className="text-gray-300">Level</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fa fa-birthday-cake  px-2 pl-4 text-gray-700"></i>
-                                <select onChange={(e)=>{setData({...data,level:e.target.value})}} value={data.level} className="w-full p-3 outline-none" name="" id="">
-                                    <option value="first">First </option>
-                                    <option value="second">Second</option>
-                                    <option value="threed">Threed</option>
-                                </select>
-                            </div>
-                        </label>
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-<<<<<<< HEAD
-                            <p className="text-gray-300">location group</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fa fa-location  px-2 pl-4 text-gray-700"></i>
-                                <select onChange={(e)=>{setData({...data,locationGroup:e.target.value})}} value={data.locationGroup} className="w-full p-3 outline-none" name="" id="">
-                                    <option value="group hisamiah">group hismiah</option>
-                                    <option value="group faqus">group faqus</option>
-                                    <option value="group roudah">group roudah</option>
-                                </select>
-                            </div>
-                        </label>
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-=======
->>>>>>> 0cd0c47e27e904945cfaf55729d92c52fb410135
-                            <p className="text-gray-300">Gender</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fa fa-mars  px-2 pl-4 text-gray-700"></i>
-                                <select onChange={(e)=>{setData({...data,gender:e.target.value})}} value={data.gender} className="w-full p-3 outline-none" name="" id="">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                        </label>
-                    </div>
-
-                    <div className="inputs-2 flex gap-7 w-full">
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-                            <p className="text-gray-300">Number phone</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fa fa-phone  px-2 pl-4 text-gray-700"></i>
-                                <input onChange={(e)=>{setData({...data,num:e.target.value})}} value={data.num} className="w-full p-3 outline-none" type="text" placeholder="Phone number"/>
-                            </div>
-                        </label>
-                        <label className="flex flex-col gap-1 w-full" htmlFor="">
-                            <p className="text-gray-300">Location</p>
-                            <div className="inp flex items-center inp-s w-full">
-                                <i className="fas fa-location-arrow  px-2 pl-4 text-gray-700"></i>
-                                <input onChange={(e)=>{setData({...data,location:e.target.value})}} value={data.location} className="w-full p-3 outline-none" type="text" placeholder="Address location"/>
-                            </div>
-                        </label>
-                    </div>
-
-                    <button onClick={submit} className="bg-linear-to-l mt-5 from-blue-600 to-violet-600 p-2 rounded-lg cursor-pointer">
-                        <i className="fa fa-user-plus pr-2"></i>
-                        Add User
-                    </button>
-
+            <div className="inputs flex flex-col gap-4">
+                <div className="inputs-2 flex gap-7 w-full">
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">Enter Name</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fa fa-user  px-2 pl-4 text-gray-700"></i>
+                            <input onChange={(e)=>{setData({...data,name:e.target.value})}} value={data.name} className="w-full p-3 outline-none" type="text" placeholder="Name student"/>
+                        </div>
+                    </label>
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">Student id</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fa fa-barcode-read  px-2 pl-4 text-gray-700"></i>
+                            <input onChange={(e)=>{setData({...data,stuId:e.target.value})}} value={data.stuId} className="w-full p-3 outline-none" type="text" placeholder="Code student"/>
+                        </div>
+                    </label>
 
                 </div>
-              </div>
+
+                <div className="inputs-2 flex gap-7 w-full">
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">Level</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fa fa-birthday-cake  px-2 pl-4 text-gray-700"></i>
+                            <select onChange={(e)=>{setData({...data,level:e.target.value})}} value={data.level} className="w-full p-3 outline-none" name="" id="">
+                                <option value="first">First </option>
+                                <option value="second">Second</option>
+                                <option value="threed">Threed</option>
+                            </select>
+                        </div>
+                    </label>
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">location group</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fa fa-location  px-2 pl-4 text-gray-700"></i>
+                            <select onChange={(e)=>{setData({...data,locationGroup:e.target.value})}} value={data.locationGroup} className="w-full p-3 outline-none" name="" id="">
+                                <option value="group hisamiah">group hismiah</option>
+                                <option value="group faqus">group faqus</option>
+                                <option value="group roudah">group roudah</option>
+                            </select>
+                        </div>
+                    </label>
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">Gender</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fa fa-mars  px-2 pl-4 text-gray-700"></i>
+                            <select onChange={(e)=>{setData({...data,gender:e.target.value})}} value={data.gender} className="w-full p-3 outline-none" name="" id="">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+
+                <div className="inputs-2 flex gap-7 w-full">
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">Number phone</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fa fa-phone  px-2 pl-4 text-gray-700"></i>
+                            <input onChange={(e)=>{setData({...data,num:e.target.value})}} value={data.num} className="w-full p-3 outline-none" type="text" placeholder="Phone number"/>
+                        </div>
+                    </label>
+                    <label className="flex flex-col gap-1 w-full" htmlFor="">
+                        <p className="text-gray-300">Location</p>
+                        <div className="inp flex items-center inp-s w-full">
+                            <i className="fas fa-location-arrow  px-2 pl-4 text-gray-700"></i>
+                            <input onChange={(e)=>{setData({...data,location:e.target.value})}} value={data.location} className="w-full p-3 outline-none" type="text" placeholder="Address location"/>
+                        </div>
+                    </label>
+                </div>
+
+                <button onClick={submit} className="bg-linear-to-l mt-5 from-blue-600 to-violet-600 p-2 rounded-lg cursor-pointer">
+                    <i className="fa fa-user-plus pr-2"></i>
+                    Add User
+                </button>
+
+
+            </div>
+            </div>
                 
         </div>
     )

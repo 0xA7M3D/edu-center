@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import success from "../assets/images/success.png";
 import wrong from "../assets/images/wrong.png";
 import edite_png from "../assets/images/edite-2.png";
-import delete_png from "../assets/images/delete.png";
+import delete_png from "../assets/images/trash.png";
 
 
 
@@ -258,7 +258,7 @@ function Students(){
                     <h2 className="text-3xl text-gray-200 text-center">Are You sure about deleteing! </h2>
                     <p className="text-md text-gray-600 text-center">This student will be permanently removed</p>
                 </div>
-                <button onClick={()=>{openPopupDel(false);deleteUser(); scrolBody}} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
+                <button onClick={()=>{openPopupDel(false);deleteUser(); scrolBody}} className="p-2 px-4 w-full bg-linear-to-r from-pink-800 to-pink-950 cursor-pointer rounded-lg h-max">  Remove </button>
             </div>
             <div className={`box popup ${popupDelGr ? 'active':''} fixed z-40 -translate-1/2 top-1/2 left-1/2 !bg-gray-900 popup-add-student w-100 gap-7 flex flex-col items-center`}>
                 <div className="icon-status h-17 -translate-y-22">
@@ -270,7 +270,7 @@ function Students(){
                     <h2 className="text-3xl text-gray-200 text-center">Are You sure about deleteing! </h2>
                     <p className="text-md text-gray-600 text-center">This group will be permanently removed</p>
                 </div>
-                <button onClick={()=>{openPopupDelGr(false);deleteGroup(); }} className="p-2 px-4 w-full bg-linear-to-r from-red-500 to-orange-600 cursor-pointer rounded-lg h-max">  Remove </button>
+                <button onClick={()=>{openPopupDelGr(false);deleteGroup(); }} className="p-2 px-4 w-full bg-linear-to-r from-pink-800 to-pink-950 cursor-pointer rounded-lg h-max">  Remove </button>
             </div>
 
            
