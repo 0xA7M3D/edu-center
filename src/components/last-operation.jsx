@@ -9,31 +9,6 @@ function LastOperation(){
     const [idOper , setIdOper] = useState()
     const [popupDel,openPopupDel] = useState(false);
 
-
-    function deleteOperation() {
-
-        fetch("http://localhost:3000/deleteOperation",{
-            method:"post",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({id:idOper})
-            
-        })
-        .then(res => res.json())
-        .then(da => {
-            console.log(da)
-            setNotifcat_succ(true);
-            setNotifcat_wrong(false);
-        })
-        .catch(error =>{
-            console.log("Error delete User: " , error);
-            setNotifcat_wrong(true);
-            setNotifcat_succ(false);
-      
-        })
-    }
-
     const [operations , setOperations] = useState([
            
         {
@@ -56,8 +31,33 @@ function LastOperation(){
             codeOperation:'sa2-1sd2',
             num:'011-3355-325',
         },
-    ]
-       )
+    ])
+
+    function deleteOperation() {
+        fetch(`http://localhost:3000/deleteOperation/${idOper}`)
+        .then(res => res.json())
+        .then(da => {
+            console.log(da)
+            setNotifcat_succ(true);
+            setNotifcat_wrong(false);
+        })
+        .catch(error =>{
+            console.log("Error delete Operation: " , error);
+            setNotifcat_wrong(true);
+            setNotifcat_succ(false);
+    
+        })
+    }
+
+    function get_operations(){
+        fetch("http://localhost:3000/operations")
+        .then(res=> res.json())
+        .then(data=> setOperations(data))
+        .catch(err=> console.log("Error Get Groups: " ,err))
+    }
+    get_operations()
+
+
     
        
 
@@ -141,7 +141,7 @@ function LastOperation(){
                                     <td className="td-s">{op.doneIn}</td>
                                     <td className="td-s ">
                                         {
-                                            op.status == "Done" ?
+                                            op.status.toLowerCase() == "done" ?
                                             <p className="p-2 px-4 rounded-lg bg-green-500/10 text-green-400/80 w-max">Done</p>
                                             :
                                             <p className="p-2 px-4 rounded-lg bg-red-400/10 text-red-400/80 w-max">Error</p>

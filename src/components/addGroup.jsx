@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import success from "../assets/images/success.png";
 import wrong from "../assets/images/wrong.png";
 function AddGroup(){
@@ -16,6 +16,10 @@ function AddGroup(){
         endDate:'',
     })
 
+    useEffect(()=>{
+        console.log(data);
+    },[data])
+
     function submit() {
 
         fetch("http://localhost:3000/addGroup",{
@@ -27,7 +31,7 @@ function AddGroup(){
             
         })
         .then(res => res.json())
-              .then(da => {
+        .then(da => {
             console.log(da)
             openPopupSu(true);
             openPopupWr(false);
@@ -105,7 +109,7 @@ function AddGroup(){
                             <p className="text-gray-300">price</p>
                             <div className="inp flex items-center inp-s w-full">
                                 <i className="fa fa-dollar-sign  px-2 pl-4 text-gray-700"></i>
-                                <input onChange={(e)=>{setData({...data,priceMonth:e.target.value})}} value={data.startDate} className="w-full p-3 outline-none" type="number" placeholder="The price in month"/>
+                                <input onChange={(e)=>{setData({...data,priceMonth:e.target.value})}} value={data.priceMonth} className="w-full p-3 outline-none" type="number" placeholder="The price in month"/>
                             </div>
                         </label>
                         <label className="flex flex-col gap-1 w-full" htmlFor="">

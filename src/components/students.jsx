@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import success from "../assets/images/success.png";
 import wrong from "../assets/images/wrong.png";
 import edite_png from "../assets/images/edite-2.png";
@@ -17,138 +17,41 @@ function Students(){
     const [popupDelGr,openPopupDelGr] = useState(false);
     const [idGroup,setidGroup] = useState(null);
    // -----  Post  ----- 
-    const [data,setData] =
-    useState({
-        id:0,
-        name:'',
-        stuId:'',
-        level:'first',
-        gender:'male',
-        num:'',
-        location:''
-    })
+    const [data,setData] = useState([])
 
-    const [infoUser, setinfoUser] = useState(
-        {
-            id:1,
-            name:'',
-            stuId:'',
-            level:'',
-            gender:'',
-            num:'',
-            location:'',
-            addedIn:''
-        }
-       )
-
-    const reftop = useRef();
-    const scrolBody = ()=>{
-        reftop.current.scrollIntoView({behavior:'smooth'})
-    }
-
-    function submit() {
-
-        fetch("http://localhost:3000/editeUser",{
-            method:"post",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(infoUser)
-            
-        })
-        .then(res => res.json())
-        .then(da => {
-            console.log(da)
-            setNotifcat_succ(true);
-            setNotifcat_wrong(false);
-        })
-        .catch(error =>{
-            console.log("Error Edite info user: " , error);
-            setNotifcat_wrong(true);
-            setNotifcat_succ(false);
-        })
-    }
-    function deleteUser() {
-
-        fetch("http://localhost:3000/deleteUser",{
-            method:"post",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({id:idUser})
-            
-        })
-        .then(res => res.json())
-        .then(da => {
-            console.log(da)
-            setNotifcat_succ(true);
-            setNotifcat_wrong(false);
-        })
-        .catch(error =>{
-            console.log("Error delete User: " , error);
-            setNotifcat_wrong(true);
-            setNotifcat_succ(false);
-      
-        })
-    }
-    function deleteGroup() {
-
-        fetch("http://localhost:3000/deleteGroup",{
-            method:"post",
-            headers:{
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({id:idGroup})
-            
-        })
-        .then(res => res.json())
-        .then(da => {
-            console.log(da)
-            setNotifcat_succ(true);
-            setNotifcat_wrong(false);
-        })
-        .catch(error =>{
-            console.log("Error delete group: " , error);
-            setNotifcat_wrong(true);
-            setNotifcat_succ(false);
-      
-        })
-    }
-       
-   // -----  Get  ----- 
+       // -----  Get  ----- 
 
    const [users , setUsers] = useState([
-   
-    {
-        id:1,
-        name:'Ahmed Elhady',
-        stuId:'4442234',
-        level:'threed',
-        gender:'male',
-        num:'011-3355-325',
-        location:'Cairo',
-        addedIn:'12/5/2026'
-    },
-    {
-        id:2,
-        name:'Muhammed Elhady',
-        stuId:'876854',
-        level:'first',
-        gender:'male',
-        num:'011-3355-325',
-        location:'Algeria',
-        addedIn:'11/5/2026'
-    },
-    {
-        id:3,
-        name:'Omar Elhady',
-        stuId:'123551',
-        level:'second',
-        gender:'male',
-        num:'011-3355-325',
-        location:'Moroco',
-        addedIn:'10/5/2026'
-    }
+    // {
+    //     id:1,
+    //     name:'Ahmed Elhady',
+    //     stuId:'4442234',
+    //     level:'threed',
+    //     gender:'male',
+    //     num:'011-3355-325',
+    //     location:'Cairo',
+    //     addedIn:'12/5/2026'
+    // },
+    // {
+    //     id:2,
+    //     name:'Muhammed Elhady',
+    //     stuId:'876854',
+    //     level:'first',
+    //     gender:'male',
+    //     num:'011-3355-325',
+    //     location:'Algeria',
+    //     addedIn:'11/5/2026'
+    // },
+    // {
+    //     id:3,
+    //     name:'Omar Elhady',
+    //     stuId:'123551',
+    //     level:'second',
+    //     gender:'male',
+    //     num:'011-3355-325',
+    //     location:'Moroco',
+    //     addedIn:'10/5/2026'
+    // }
 ]
    )
    const [groups , setGroups] = useState([
@@ -178,6 +81,109 @@ function Students(){
     },
 ]
    )
+
+
+    const [infoUser, setinfoUser] = useState(
+        {
+            id:1,
+            name:'',
+            stuId:'',
+            level:'',
+            gender:'',
+            num:'',
+            location:'',
+            addedIn:''
+        }
+       )
+
+       useEffect(()=>{
+            console.log(infoUser);
+       },[infoUser])
+
+    const reftop = useRef();
+    const scrolBody = ()=>{
+        reftop.current.scrollIntoView({behavior:'smooth'})
+    }
+
+    function get_students() {
+        fetch("http://localhost:3000/users")
+            .then(res => res.json())
+            .then(data => { setUsers(data) ;console.log(data)})
+            .catch(err => console.log("Error Get Users:", err))
+    }
+
+    useEffect(()=>{
+        get_students()
+    },[])
+
+    function edite_sub() {
+
+        fetch("http://localhost:3000/editeUser",{
+            method:"post",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(infoUser)
+            
+        })
+        .then(res => res.json())
+        .then(da => {
+            console.log(da)
+            setNotifcat_succ(true);
+            setNotifcat_wrong(false);
+            get_students();
+        })
+        .catch(error =>{
+            console.log("Error Edite info user: " , error);
+            setNotifcat_wrong(true);
+            setNotifcat_succ(false);
+        })
+    }
+    function deleteUser() {
+
+        fetch(`http://localhost:3000/deleteUser/${idUser}`)
+        .then(res => res.text())
+        .then(da => {
+            console.log(da)
+            setNotifcat_succ(true);
+            setNotifcat_wrong(false);
+            get_students()
+        })
+        .catch(error =>{
+            console.log("Error delete User: " , error);
+            setNotifcat_wrong(true);
+            setNotifcat_succ(false);
+      
+        })
+    }
+
+    function get_groups(){
+        fetch("http://localhost:3000/groups")
+        .then(res => res.json())
+        .then(data=> setGroups(data))
+        .catch(err => console.log("Error Get Groups: ",err))
+    }
+    get_groups()
+
+    function deleteGroup() {
+
+        fetch(`http://localhost:3000/deleteGroup/${idGroup}`)
+        .then(res => res.json())
+        .then(da => {
+            console.log(da)
+            setNotifcat_succ(true);
+            setNotifcat_wrong(false);
+            
+        })
+        .catch(error =>{
+            console.log("Error delete Group: " , error);
+            setNotifcat_wrong(true);
+            setNotifcat_succ(false);
+      
+        })
+    }
+  
+       
 
 
 
@@ -245,7 +251,7 @@ function Students(){
         
 
                 </div>
-                <button onClick={()=>{openPopupEd(false); submit()}} className="p-2 px-4 w-full bg-linear-to-l from-green-500 to-lime-700 cursor-pointer rounded-lg h-max"> Update </button>
+                <button onClick={()=>{openPopupEd(false); edite_sub()}} className="p-2 px-4 w-full bg-linear-to-l from-green-500 to-lime-700 cursor-pointer rounded-lg h-max"> Update </button>
             </div>
 
             <div className={`box popup ${popupDel ? 'active':''} absolute z-40 -translate-1/2 top-1/2 left-1/2 !bg-gray-900 popup-add-student w-100 gap-7 flex flex-col items-center`}>
@@ -325,7 +331,8 @@ function Students(){
                                 <th className="th-s">Level</th>
                                 <th className="th-s">Added in</th>
                                 <th className="th-s">Status</th>
-                                <th className="th-s">Number</th>
+                                <th className="th-s">Number Student</th>
+                                <th className="th-s">Number Parent</th>
                                 <th className="th-s">Code</th>
                                 <th className="th-s">Action</th>
                             </tr>
@@ -338,11 +345,12 @@ function Students(){
                                         <td className="td-s">{user.id}</td>
                                         <td className="td-s">{user.name}</td>
                                         <td className="td-s">{user.level}</td>
-                                        <td className="td-s">{user.addedIn}</td>
+                                        <td className="td-s">{user.add_in}</td>
                                         <td className="td-s ">
                                             <p className="p-2 px-4 rounded-lg bg-green-500/10 text-green-400/80 w-max">Paid</p>
                                         </td>
-                                        <td className="td-s">{user.num}</td>
+                                        <td className="td-s">{user.numStudent}</td>
+                                        <td className="td-s">{user.numParent}</td>
                                         <td className="td-s">{user.stuId}</td>
                                         <td className="td-s">
                                             <div className="actions flex gap-2 ">
@@ -353,7 +361,7 @@ function Students(){
                                                         name:user.name,
                                                         level:user.level,
                                                         addedIn:user.addedIn,
-                                                        num:user.num,
+                                                        num:user.numStudent,
                                                         location:user.location,
                                                         stuId:user.stuId,
                                                     });

@@ -135,7 +135,7 @@ body{
   @apply text-start border-b border-gray-800/80 p-1 py-2 pl-4 text-gray-700
 }
 .td-s{
-  @apply text-start border-b border-gray-800/50 p-4 text-sm py-3 text-gray-300
+  @apply text-start border-b border-gray-800/50 p-4 text-[13px] py-3 text-gray-300
 }
 
 .oper-box-small-i-green{
